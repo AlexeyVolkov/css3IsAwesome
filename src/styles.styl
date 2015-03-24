@@ -1,3 +1,6 @@
+@font-face
+	font-family SeasideResort
+	src local("SeasideResort"), url(../fonts/SEASRN.ttf)
 @keyframes bikeLoop
 	for i in 0..10
 		{10%*i}
@@ -14,18 +17,47 @@
 		background-position 0% 0%
 	to
 		background-position -800px 0%
+@keyframes logoBlinking
+	0%
+		transform scale(1)
+	50%
+		transform scale(6)
+	100%
+		transform scale(1)
 #bike
 	width 450px
 	height 484px
 	position relative
 	margin 20px 0
+	overflow hidden
+	
+	border-radius 5px
 	background-image url(../images/desert.jpg)
+	box-shadow 0 -10px 15px 0 #ACBECC, 0 -5px 5px 0 #ACBECC, 0 -3px 3px 0 #ACBECC, 0 3px 3px #BFAD95, 0 5px 5px #BFAD95, 0 10px 15px #BFAD95
 	animation backgroundLoop 3.5s linear infinite paused
 	&:hover
 		animation-play-state running
 		#frontwheel
 		#backwheel					
 			animation-play-state running
+		/*h1
+			animation-play-state running !important*/
+	
+	#logo
+		position absolute
+		width 100%
+		height 79px
+
+		font-family SeasideResort, sans-serif
+		color black
+		text-align center
+		
+		h1
+			animation-name logoBlinking
+			animation-duration 1s
+			animation-iteration-count infinite
+			animation-play-state paused
+			
 
 	[id*="frame"]
 		height 10px
@@ -129,7 +161,7 @@
 		animation-name bikeLoop, wheelColor
 		animation-duration 1s
 		animation-iteration-count infinite
-		animation-play-state paused		
+		animation-play-state paused
 		
 	.center
 		position absolute
