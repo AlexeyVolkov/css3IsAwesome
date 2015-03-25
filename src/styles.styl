@@ -17,13 +17,20 @@
 		background-position 0% 0%
 	to
 		background-position -800px 0%
-@keyframes logoBlinking
-	0%
-		transform scale(1)
-	50%
-		transform scale(6)
-	100%
-		transform scale(1)
+@keyframes cssBlinking
+	0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100%
+		opacity .99
+		text-shadow 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed
+	19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999%
+		opacity 0.4
+		text-shadow none
+@keyframes awesomeBlinking
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%
+		opacity .99
+		text-shadow 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999%
+		opacity 0.4
+		text-shadow none
 #bike
 	width 450px
 	height 484px
@@ -31,33 +38,59 @@
 	margin 20px 0
 	overflow hidden
 	
+	filter grayscale(1)
 	border-radius 5px
 	background-image url(../images/desert.jpg)
-	box-shadow 0 -10px 15px 0 #ACBECC, 0 -5px 5px 0 #ACBECC, 0 -3px 3px 0 #ACBECC, 0 3px 3px #BFAD95, 0 5px 5px #BFAD95, 0 10px 15px #BFAD95
+	box-shadow 0 3px 3px #BFAD95, 0 5px 5px #BFAD95, 0 10px 15px #BFAD95
 	animation backgroundLoop 3.5s linear infinite paused
+	transition filter 1s
 	&:hover
 		animation-play-state running
+		filter grayscale(0)
 		#frontwheel
 		#backwheel					
 			animation-play-state running
-		/*h1
-			animation-play-state running !important*/
 	
 	#logo
 		position absolute
 		width 100%
 		height 79px
+		padding 1em 0
 
-		font-family SeasideResort, sans-serif
-		color black
 		text-align center
+		perspective 500px
+
+		&:hover
+			background-color rgba(0, 0, 0, 0.7)
+			h1
+				color white
+				transform rotate(0)
+				text-shadow 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff
+				span.cssLabel
+					color red
+					text-shadow 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed
+					span
+						animation-name cssBlinking
+						animation-duration 10s
+						animation-iteration-count infinite
+						animation-timing-function linear
+						animation-play-state running
+				span.awesome
+					text-shadow 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff
+					animation-name awesomeBlinking
+					animation-duration 11s
+					animation-iteration-count infinite
+					animation-timing-function linear
+					animation-play-state running
 		
 		h1
-			animation-name logoBlinking
-			animation-duration 1s
-			animation-iteration-count infinite
-			animation-play-state paused
-			
+			font-family SeasideResort, sans-serif
+			color black
+
+			transition color .1s, transform 0.3s
+			transform-origin 0% 50%
+			transform rotate(3deg)
+				
 
 	[id*="frame"]
 		height 10px
@@ -155,7 +188,8 @@
 		height 120px
 		position absolute
 		border 10px solid black
-		top 314px//+145
+		top 314px
+
 		border-radius 50%
 		box-shadow inset 0 0 0 5px purple
 		animation-name bikeLoop, wheelColor
