@@ -1,6 +1,7 @@
 @font-face
-	font-family SeasideResort
-	src local("SeasideResort"), url(../fonts/SEASRN.ttf)format('truetype')
+	font-family "JetBrains Mono"
+	font-display fallback
+	src local("JetBrains Mono"), url(../fonts/JetBrainsMono-Regular.ttf) format('truetype')
 @keyframes bikeLoop
 	for i in 0..10
 		{10%*i}
@@ -8,7 +9,7 @@
 @keyframes wheelColor
 	0%
 		border-radius 50%
-	50%#ffd700
+	50%
 		border-radius 48%
 	100%
 		border-radius 50%
@@ -31,20 +32,22 @@
 	20%, 21.999%, 63%, 63.999%, 65%, 69.999%
 		opacity 0.4
 		text-shadow none
+html
+	min-width 28rem
 #bike
-	width 450px
-	height 484px
+	width 28rem
+	height 30rem
 	position relative
-	margin 20px 0
+	margin 1rem auto
 	overflow hidden
 	
 	filter grayscale(1)
-	border-radius 5px
-	background-image url(../images/desert.jpg)
-	box-shadow 0 3px 3px #BFAD95, 0 5px 5px #BFAD95, 0 10px 15px #BFAD95
+	border-radius .2rem
+	background-image url(../images/d.jpg)
+	box-shadow 0 .2rem .2rem #BFAD95, 0 .3rem .3rem #BFAD95, 0 .4rem .5rem #BFAD95
 	animation backgroundLoop 3.5s linear infinite paused
 	transition filter 1s
-	&:hover
+	&:hover, &:focus
 		animation-play-state running
 		filter grayscale(0)
 		#frontwheel
@@ -54,13 +57,13 @@
 	#logo
 		position absolute
 		width 100%
-		height 79px
+		height 5rem
 		padding 1em 0
 
 		text-align center
 		perspective 500px
 
-		&:hover
+		&:hover, &:focus
 			background-color rgba(0, 0, 0, 0.7)
 			h1
 				color white
@@ -84,7 +87,7 @@
 					animation-play-state running
 		
 		h1
-			font-family SeasideResort, sans-serif
+			font-family "JetBrains Mono", Verdana, Arial, Helvetica, sans-serif
 			color black
 
 			transition color .1s, transform 0.3s
