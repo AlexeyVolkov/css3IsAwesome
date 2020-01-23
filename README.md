@@ -4,6 +4,8 @@
 
 Alex Volkov played with CSS3 Animations and made a bicycle and some more code.
 
+- **Bicycle** - https://volkov.best/projects/css3/
+
 ## Structure
 
 ```
