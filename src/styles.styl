@@ -32,8 +32,28 @@
 	20%, 21.999%, 63%, 63.999%, 65%, 69.999%
 		opacity 0.4
 		text-shadow none
-html
+html 
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
 	min-width 28rem
+*
+*:before
+*:after 
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
+	margin 0
+	padding 0
+// smoothing
+h1
+h2
+h4
+p
+span
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	text-shadow 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.004)
 .bike
 	width 28rem
 	height 30rem
@@ -41,18 +61,11 @@ html
 	margin 1rem auto
 	overflow hidden
 	
-	// filter grayscale(1)
 	border-radius .2rem
 	background-image url(../images/d.jpg)
 	box-shadow 0 .2rem .2rem #BFAD95, 0 .3rem .3rem #BFAD95, 0 .4rem .5rem #BFAD95
 	animation backgroundLoop 3.5s linear infinite
 	animation-play-state running
-	// transition filter 1s
-	// &:hover, &:focus
-	// 	animation-play-state running
-	// 	filter grayscale(0)
-	// 	.wheel					
-	// 		animation-play-state running
 	
 	[class*="frame__"]
 		height .625rem
@@ -61,7 +74,6 @@ html
 		z-index 2
 		border-radius 5px
 		animation frameBoxShadow 1s infinite
-		// animation-play-state paused
 
 	plusHeight = 6.3rem
 	.frame__fork
@@ -148,29 +160,29 @@ html
 		height 7.6rem
 		position absolute
 		border thick solid black
-		top 19.5rem
+		top 20rem
 
 		border-radius 50%
 		box-shadow inset 0 0 0 .3rem purple
 		animation-name bikeLoop, wheelRadius
 		animation-duration 10s
 		animation-iteration-count infinite
-		// animation-play-state paused
 		
 	.wheel__center
 		position absolute
-		top 3.8rem
-		left 3.8rem
+		top 3.2rem
+		left 3.2rem
 		width .5rem
 		height .5rem
 		border-radius 50%
 		background-color black
 	[class*="wheel__spoke"]
 		height .1rem
-		width 3.8rem
+		width 3.3rem
 		background-color black
 		position absolute
-		top 4rem		
+		top 3.5rem
+		left .2rem		
 		transform-origin 100% 50%
 	.wheel__spoke1
 		transform rotate(72deg)
@@ -181,9 +193,9 @@ html
 	.wheel__spoke4
 		transform rotate(288deg)
 	.wheel_back
-		left 2.1rem			
+		left 3rem			
 	.wheel_front
-		left 17.3rem
+		left 18rem
 
 .bike__logo
 	position absolute

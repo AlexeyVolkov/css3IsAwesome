@@ -1,101 +1,118 @@
 tvrainColor = #EE2375
-@font-face
-	font-family 'Rain Tungsten'
-	src local('Rain Tungsten'), url('../fonts/rain.ttf') format('truetype')
-#background
+// @url: https://css-tricks.com/box-sizing/
+html 
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
+	min-width 50rem
+*
+*:before
+*:after 
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
+	margin 0
+	padding 0
+// smoothing
+h1
+h2
+h4
+p
+span
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	text-shadow 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.004)
+.background
 	position relative
-	margin 20px
-	width 768px
-	height 432px
+	margin 1.25rem
+	width 48rem
+	height 27rem
+	margin 1rem auto
 
-	background-image url("../images/rain.jpg")
+	background-image url("../images/r.jpg")
 	background-attachment scroll
 	background-repeat no-repeat
 	background-size contain
-	border-radius 5px;
-	box-shadow 0 -2px 3px 1px #C6E4FC, 0 -2px 6px 4px #F7FBFC, 0 2px 3px 1px #7E9299, 0 2px 6px 4px #7E9299
+	border-radius .3rem;
+	box-shadow 0 -.125rem .2rem .1rem #C6E4FC, 0 -.125rem .4rem .25rem #F7FBFC, 0 .125rem .2rem .1rem #7E9299, 0 .125rem .4rem .25rem #7E9299
 
-	video
+.background__video
+	position absolute
+	height 100%
+	width 100%
+	z-index 10
+.background__logo
+	position absolute
+	z-index 20
+	height 100%
+	width 100%
+
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform uppercase
+
+[class*="background__heading"]
+	display block
+	margin 0
+	position absolute
+.background__heading-1			
+	font-size 10rem
+	top 1.25rem
+	left 3.75rem
+
+	color tvrainColor
+	text-shadow 0 0 .125rem tvrainColor
+	.heading-1__span
+		display inline-block
+		transform skewX(-12deg)
+.background__heading-4
+	font-size 3rem
+	padding .2rem
+	top 12rem
+	left 3.75rem
+	right 4.75rem
+	padding-left 2.4rem
+
+	background-color tvrainColor
+	color white
+	&:before
+		content ''
 		position absolute
-		height 100%
-		width 100%
+		width 1.9rem
+		height 1.3em
+		top 0
+		left -1.9rem
 		z-index 10
-	#logo
+		
+		background-image linear-gradient(to bottom right, transparent 50%, tvrainColor 50%)
+	&:after
+		content ''
 		position absolute
+		width 0
+		height 0
+		left -4rem
+		top 1rem
 		z-index 20
-		height 100%
-		width 100%
 
-		font-family: /*Rain Tungsten*/Arial, sans-serif
-		text-transform uppercase
-
-		h1, h4, h2
-			display block
-			margin 0
-			position absolute
-		h1			
-			font-size 165px
-			top 20px
-			left 60px
-
-			color tvrainColor
-			text-shadow 0 0 2px tvrainColor
-			span
-				display inline-block
-				transform skewX(-12deg)
-				//position absolute
-				//clip rect(10px, auto, auto, 1px)
-				//background-color white
-		h4
-			font-size 47px
-			padding 3px
-			top 195px
-			left 60px
-			right 76px
-			padding-left 38px
-
-			background-color tvrainColor
-			color white
-			&:before
-				content ''
-				position absolute
-				width 30px
-				height 1.3em
-				top 0
-				left -30px
-				z-index 10
-				
-				background-image linear-gradient(to bottom right, transparent 50%, tvrainColor 50%)
-			&:after
-				content ''
-				position absolute
-				width 0
-				height 0
-				left -65px
-				top 16px
-				z-index 20
-
-				border-style: solid;
-				border-width: 45px 79px 0 0;
-				border-color: white transparent transparent transparent;
-				transform rotate(-34deg)
-
-		h2
-			top 265px
-			left 438px			
-			padding 0 20px
-			font-size 4.8em
-			
-			h2Color = white
-			background-color h2Color
-			color black
-			text-shadow 0 0 2px black
-			&:after
-				content ''
-				position absolute
-				width 44px
-				height 1.15em
-				top 0
-				left 210px
-				
-				background-image linear-gradient(to top left, transparent 50%, h2Color 50%)
+		border-style: solid;
+		border-width: 2.8rem 4.9rem 0 0;
+		border-color: white transparent transparent transparent;
+		transform rotate(-34deg)
+.background__heading-2
+	top 16rem
+	left 27.375rem			
+	padding 0 1.25rem
+	font-size 4.8rem
+	
+	h2Color = white
+	background-color h2Color
+	color black
+	text-shadow 0 0 0.125rem black
+	&:after
+		content ''
+		position absolute
+		width 2.75rem
+		height 5.6rem
+		top 0
+		left 13.125rem
+		
+		background-image linear-gradient(to top left, transparent 50%, h2Color 50%)
