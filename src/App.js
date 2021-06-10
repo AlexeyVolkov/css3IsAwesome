@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.css'
 
-import Rain from './components/Rain'
+import Rain from './components/Rain/Rain'
 import Bicycle from './components/Bicycle'
 import Header from './components/Header/Header'
 
