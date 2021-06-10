@@ -61,6 +61,11 @@ const Header = () => (
             Дождь
           </LocalNavLink>
         </li>
+        <li>
+          <LocalNavLink to='/box' className='nav-link px-2'>
+            Box
+          </LocalNavLink>
+        </li>
       </ol>
       <GithubMenu />
     </header>
