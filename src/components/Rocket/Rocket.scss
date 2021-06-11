@@ -1,0 +1,166 @@
+.space {
+  min-height: 20rem;
+  background-color: #265169;
+  background-image: linear-gradient(#1b3140, #397aa4);
+  position: relative;
+  z-index: 1;
+
+  .star {
+    $xs-size: 0.25rem;
+    $small-size: 0.5rem;
+    $medium-size: 1rem;
+    $unit: rem;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    height: $medium-size;
+    width: $medium-size;
+    position: absolute;
+    top: random(10) + rem;
+    right: random(10) + rem;
+    border-radius: 50%;
+    z-index: 2;
+
+    &_xs {
+      height: $xs-size;
+      width: $xs-size;
+    }
+    &_sm {
+      height: $small-size;
+      width: $small-size;
+    }
+
+    @for $index from 1 through 25 {
+      &_#{$index} {
+        top: random(20) + $unit;
+        right: random(100) + $unit;
+      }
+    }
+  }
+}
+.rocket {
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+
+  &__head {
+    position: absolute;
+    background-color: #e2564d;
+    background-image: linear-gradient(
+      90deg,
+      #e2564d 0%,
+      #e2564d 50%,
+      #c2493e 50%,
+      #c2493e 100%
+    );
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    clip-path: polygon(50% 0, 84% 44%, 100% 100%, 0 100%, 16% 44%);
+    z-index: 3;
+  }
+
+  &__body {
+    position: absolute;
+    top: 2rem;
+    background-color: white;
+    background-image: linear-gradient(
+      90deg,
+      #f8f8f1 0%,
+      #f8f8f1 50%,
+      #cfd4d0 50%,
+      #cfd4d0 100%
+    );
+    width: 4rem;
+    height: 8rem;
+    border-top-left-radius: 3rem 10rem;
+    border-top-right-radius: 3rem 10rem;
+    border-bottom-right-radius: 1rem 10rem;
+    border-bottom-left-radius: 1rem 10rem;
+    z-index: 3;
+  }
+
+  &__flipper {
+    position: absolute;
+    background-color: #c2493e;
+    top: 8rem;
+    width: 2rem;
+    height: 3rem;
+    z-index: 2;
+
+    &_right {
+      clip-path: polygon(0 0, 80% 40%, 100% 100%, 0 53%);
+      left: 3.5rem;
+    }
+    &_left {
+      clip-path: polygon(20% 60%, 100% 0, 100% 80%, 0 100%);
+      left: -1.5rem;
+      top: 7rem;
+    }
+    &_middle {
+      clip-path: polygon(30% 14%, 50% 0, 70% 14%, 50% 100%);
+      left: 0;
+      top: 8rem;
+      z-index: 4;
+      width: 4rem;
+      height: 4rem;
+      background-image: linear-gradient(
+        90deg,
+        #e2564d 0%,
+        #e2564d 50%,
+        #c2493e 50%,
+        #c2493e 100%
+      );
+    }
+  }
+  &__porthole {
+    width: 2rem;
+    height: 2rem;
+    background-color: #20517f;
+    border-radius: 50%;
+    z-index: 4;
+    left: 1rem;
+    top: 3.5rem;
+    position: absolute;
+
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      background-color: #6fb3bf;
+      border-radius: 50%;
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+  }
+  &__flame {
+    z-index: 2;
+    width: 9rem;
+    height: 5rem;
+    top: 7.5rem;
+    left: -2.5rem;
+    position: absolute;
+
+    &_1 {
+      clip-path: polygon(
+        36% 50%,
+        14% 96%,
+        25% 93%,
+        35% 79%,
+        35% 100%,
+        44% 78%,
+        46% 95%,
+        53% 88%,
+        57% 98%,
+        61% 79%,
+        85% 100%,
+        64% 50%
+      );
+      background-color: #d89d25;
+    }
+    &_2 {
+      clip-path: polygon(38% 10%, 51% 10%, 66% 81%, 47% 66%, 38% 53%, 26% 81%);
+      background-color: #ead488;
+    }
+  }
+}
