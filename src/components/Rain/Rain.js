@@ -20,7 +20,7 @@ const Rain = () => (
       </video>
       <div className='background__logo'>
         <h1 className='background__heading-1' lang='ru'>
-          До<span className='heading-1__span'>///</span>дь
+          До<span className='heading-1__span'>/ //</span>дь
         </h1>
         <h4 className='background__heading-4' lang='en'>
           Optimistic channel
