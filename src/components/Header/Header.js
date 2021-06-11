@@ -53,7 +53,7 @@ const Header = () => (
       <ol className='nav col-12 col-md-auto mb-2 justify-content-center mb-md-0'>
         <li>
           <LocalNavLink to='/' className='nav-link px-2'>
-            Bicycle
+            Rocket
           </LocalNavLink>
         </li>
         <li>
@@ -64,6 +64,11 @@ const Header = () => (
         <li>
           <LocalNavLink to='/box' className='nav-link px-2'>
             Box
+          </LocalNavLink>
+        </li>
+        <li>
+          <LocalNavLink to='/bicycle' className='nav-link px-2'>
+            Bicycle (WIP)
           </LocalNavLink>
         </li>
       </ol>

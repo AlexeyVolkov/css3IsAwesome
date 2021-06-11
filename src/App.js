@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import Rain from './components/Rain/Rain'
 import Bicycle from './components/Bicycle/Bicycle'
+import Rocket from './components/Rocket/Rocket'
 import Box from './components/Box/Box'
 import Header from './components/Header/Header'
 
@@ -24,8 +25,11 @@ const App = () => {
             <Route path='/raintv'>
               <Rain />
             </Route>
-            <Route path='/'>
+            <Route path='/bicycle'>
               <Bicycle />
+            </Route>
+            <Route path='/'>
+              <Rocket />
             </Route>
           </Switch>
         </main>
