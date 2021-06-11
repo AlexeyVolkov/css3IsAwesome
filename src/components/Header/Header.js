@@ -4,8 +4,8 @@ import './Header.scss'
 
 const GithubMenu = () => {
   const { data: user, isLoading, error } = useUser()
-  if (isLoading) return <samp>Loading footer...</samp>
-  if (error) return <samp>Cannot load footer: {error.message}</samp>
+  if (isLoading) return <samp>Loading GitHub link...</samp>
+  if (error) return <samp>Cannot load GitHub link: {error.message}</samp>
 
   return (
     <ul className='nav col-md-3 justify-content-end'>
