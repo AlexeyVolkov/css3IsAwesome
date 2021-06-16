@@ -5,35 +5,27 @@
   position: relative;
   z-index: 1;
 
-  .star {
-    $xs-size: 0.25rem;
-    $small-size: 0.5rem;
-    $medium-size: 1rem;
-    $unit: rem;
+  .stars {
+    background-color: transparent;
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.02) 10%,
+      transparent 0
+    );
+    background-size: 1rem 1rem;
 
-    background-color: rgba(255, 255, 255, 0.1);
-    height: $medium-size;
-    width: $medium-size;
     position: absolute;
-    top: random(10) + rem;
-    right: random(10) + rem;
-    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2;
 
-    &_xs {
-      height: $xs-size;
-      width: $xs-size;
-    }
-    &_sm {
-      height: $small-size;
-      width: $small-size;
-    }
-
-    @for $index from 1 through 25 {
-      &_#{$index} {
-        top: random(20) + $unit;
-        right: random(100) + $unit;
-      }
+    .star {
+      $color: rgba(white, 0.5);
+      border-radius: 50%;
+      background: $color;
+      box-shadow: 0 0 0.3rem $color, 0 0 0.3rem $color, 0 0 0.3rem $color;
+      position: absolute;
     }
   }
 }

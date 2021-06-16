@@ -1,24 +1,38 @@
 import './Rocket.scss'
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max)
+}
+
+const getStars = () => {
+  let positions = []
+  for (let starNumber = 100; starNumber > 0; starNumber--) {
+    positions.push({
+      left: getRandomInt(100),
+      top: getRandomInt(100),
+      size: getRandomInt(5),
+      id: starNumber,
+    })
+  }
+  const renderStars = () =>
+    positions.map((position) => (
+      <div
+        key={position.id}
+        className='star'
+        style={{
+          left: position.left + '%',
+          top: position.top + '%',
+          width: position.size / 10 + 'rem',
+          height: position.size / 10 + 'rem',
+        }}
+      />
+    ))
+  return <div className='stars'>{renderStars()}</div>
+}
+
 const Rocket = () => (
   <div className='space col-12'>
-    <div className='star' />
-    <div className='star star_sm star_1' />
-    <div className='star star_2' />
-    <div className='star star_sm star_3' />
-    <div className='star star_4' />
-    <div className='star star_sm star_5' />
-    <div className='star star_6' />
-    <div className='star star_sm star_7' />
-    <div className='star star_8' />
-    <div className='star star_sm star_9' />
-    <div className='star star_10' />
-    <div className='star star_sm star_11' />
-    <div className='star star_12' />
-    <div className='star star_xs star_13' />
-    <div className='star star_xs star_14' />
-    <div className='star star_xs star_15' />
-    <div className='star star_xs star_16' />
+    {getStars()}
     <div className='rocket'>
       <div className='rocket__head'></div>
       <div className='rocket__body'></div>
