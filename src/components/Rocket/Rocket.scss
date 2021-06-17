@@ -30,9 +30,34 @@
   }
 }
 .rocket {
+  @keyframes rocket {
+    0% {
+      top: 4rem;
+      left: 50%;
+    }
+
+    33% {
+      top: 3.5rem;
+      left: 45%;
+    }
+
+    66% {
+      top: 3.5rem;
+      left: 55%;
+    }
+
+    100% {
+      top: 4rem;
+      left: 50%;
+    }
+  }
+
   position: absolute;
-  top: 4rem;
-  left: 50%;
+
+  animation-name: rocket;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 
   &__head {
     position: absolute;
