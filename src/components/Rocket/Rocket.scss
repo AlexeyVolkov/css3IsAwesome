@@ -74,19 +74,18 @@
   &__flipper {
     position: absolute;
     background-color: #c2493e;
+    clip-path: polygon(0 0, 80% 40%, 100% 100%, 0 53%);
     top: 8rem;
     width: 2rem;
     height: 3rem;
     z-index: 2;
 
     &_right {
-      clip-path: polygon(0 0, 80% 40%, 100% 100%, 0 53%);
       left: 3.5rem;
     }
     &_left {
-      clip-path: polygon(20% 60%, 100% 0, 100% 80%, 0 100%);
       left: -1.5rem;
-      top: 7rem;
+      transform: rotateY(180deg);
     }
     &_middle {
       clip-path: polygon(30% 14%, 50% 0, 70% 14%, 50% 100%);
