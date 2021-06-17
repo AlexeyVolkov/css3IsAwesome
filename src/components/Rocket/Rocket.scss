@@ -21,11 +21,28 @@
     z-index: 2;
 
     .star {
+      @keyframes star {
+        0% {
+          opacity: 1;
+        }
+        99% {
+          top: 100%;
+          opacity: 0.1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
       $color: rgba(white, 0.5);
       border-radius: 50%;
       background: $color;
       box-shadow: 0 0 0.3rem $color, 0 0 0.3rem $color, 0 0 0.3rem $color;
       position: absolute;
+      z-index: 2;
+
+      animation-name: star;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
   }
 }
@@ -39,11 +56,13 @@
     33% {
       top: 3.5rem;
       left: 45%;
+      transform: rotateZ(-5deg);
     }
 
     66% {
       top: 3.5rem;
       left: 55%;
+      transform: rotateZ(5deg);
     }
 
     100% {

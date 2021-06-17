@@ -11,6 +11,7 @@ const getStars = () => {
       left: getRandomInt(100),
       top: getRandomInt(100),
       size: getRandomInt(5),
+      animationDuration: getRandomInt(50),
       id: starNumber,
     })
   }
@@ -21,9 +22,10 @@ const getStars = () => {
         className='star'
         style={{
           left: position.left + '%',
-          top: position.top + '%',
+          top: -position.top + '%',
           width: position.size / 10 + 'rem',
           height: position.size / 10 + 'rem',
+          animationDuration: position.animationDuration + 's',
         }}
       />
     ))
