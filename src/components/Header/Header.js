@@ -53,7 +53,7 @@ const Header = () => (
       <ol className='nav col-12 col-md-auto mb-2 justify-content-center mb-md-0'>
         <li>
           <LocalNavLink to='/' className='nav-link px-2'>
-            Rocket (WIP)
+            Rocket
           </LocalNavLink>
         </li>
         <li>
